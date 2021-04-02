@@ -11,6 +11,12 @@
 
 </div>
 
+<p align="center">
+  
+<img width="80%" src="https://user-images.githubusercontent.com/48043626/113408518-7638db00-93ea-11eb-831f-151c9c3dce48.png" />
+
+</p>
+
 This is chrome extension boiler plate with React, Webpack, Typescript.
 
 ### 구현내용
@@ -27,3 +33,9 @@ chrome 확장앱을 구성하는 다음 요소를 포함합니다.
 webpack-dev-server를 이용할 경우, 제대로 된 코드가 나오지 않아 nodemon으로 production 파일을 계속만드는 것으로 대체하였습니다.
 이 방식은 점점 프로젝트가 커진다면, 부하가 발생할 가능성이 있습니다.
 만약, 더 나은 해결책을 가진 분이 계시다면, contribute 또는 issue 부탁드립니다.
+
+
+### 참고사이트 
+
+- [개인 블로그](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fddyboz%2Fbtq1E7QXx56%2FdB7WCb0uwhCUPwzpNiRoK0%2Fimg.jpg)
+- [공식 홈페이지](https://developer.chrome.com/docs/extensions/)

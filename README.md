@@ -37,5 +37,5 @@ webpack-dev-server를 이용할 경우, 제대로 된 코드가 나오지 않아
 
 ### 참고사이트 
 
-- [개인 블로그](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fddyboz%2Fbtq1E7QXx56%2FdB7WCb0uwhCUPwzpNiRoK0%2Fimg.jpg)
+- [개인 블로그](https://justlog.tistory.com/12)
 - [공식 홈페이지](https://developer.chrome.com/docs/extensions/)

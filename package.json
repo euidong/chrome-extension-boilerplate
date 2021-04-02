@@ -18,14 +18,14 @@
     "copy-webpack-plugin": "^8.1.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
-    "nodemon": "^2.0.7",
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.3",
     "webpack": "^5.28.0",
+    "webpack-chrome-extension-reloader": "^1.3.0",
     "webpack-cli": "^4.6.0"
   },
   "scripts": {
-    "start": "nodemon",
+    "build:dev": "webpack --mode=development --watch",
     "build": "webpack --mode production"
   }
 }

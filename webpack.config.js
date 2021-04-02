@@ -1,11 +1,12 @@
-var path = require('path');
-var packageInfo = require('./package.json');
+const path = require('path');
+const packageInfo = require('./package.json');
 
-var HtmlWebPackPlugin = require('html-webpack-plugin');
-var CopyWebPackPlugin = require('copy-webpack-plugin');
-var CleanWebPackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CopyWebPackPlugin = require('copy-webpack-plugin');
+const CleanWebPackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
+const ChromeExtensionReloader = require('webpack-chrome-extension-reloader');
 
-var fileExtensions = [
+const fileExtensions = [
   'jpg',
   'jpeg',
   'png',
@@ -66,7 +67,7 @@ module.exports = {
                   128: 'icon/128.png'
                 },
                 background: {
-                  service_worker: 'background.js'
+                  scripts: ['background.js']
                 },
                 content_scripts: [
                   {
@@ -75,9 +76,11 @@ module.exports = {
                   }
                 ],
                 options_page: 'option.html',
-                action: {
+                browser_action: {
                   default_popup: 'popup.html'
                 },
+                content_security_policy:
+                  " script-src 'self' 'unsafe-eval'; object-src 'self'",
                 ...JSON.parse(content.toString())
               })
             )
@@ -97,6 +100,14 @@ module.exports = {
       template: './public/option.html',
       chunks: ['option'],
       filename: 'option.html'
+    }),
+    new ChromeExtensionReloader({
+      reloadPage: true, // Force the reload of the page also
+      entries: {
+        // The entries used for the content/background scripts
+        contentScript: 'content', // Use the entry names, not the file name or the path
+        background: 'background' // *REQUIRED
+      }
     })
   ]
 };

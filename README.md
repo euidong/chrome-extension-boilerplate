@@ -6,7 +6,7 @@
 [![ReactJS](https://img.shields.io/badge/ReactJS-17.0.2-green)](https://github.com/facebook/react/blob/master/CHANGELOG.md#16131-march-19-2020)
 [![Webpack](https://img.shields.io/badge/WebPack-5.28.0-orange)](https://webpack.js.org/)
 [![Typescript](https://img.shields.io/badge/Typescript-4.2.3-blue)](https://www.typescriptlang.org/)
-[![chromeExtension](https://img.shields.io/badge/manifest-3-lightgrey)](https://developer.chrome.com/docs/extensions/mv3/intro/)
+[![chromeExtension](https://img.shields.io/badge/manifest-2-lightgrey)](https://developer.chrome.com/docs/extensions/mv2/intro/)
 [![LICENSE](https://img.shields.io/badge/License-MIT-blueviolet)](https://ko.wikipedia.org/wiki/MIT_%ED%97%88%EA%B0%80%EC%84%9C)
 
 </div>

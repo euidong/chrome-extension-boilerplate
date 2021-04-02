@@ -1,0 +1,31 @@
+{
+  "name": "chrome-ext-boiler-plate",
+  "description": "This project is chrome extension boiler plate",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "euidong",
+  "private": true,
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.133",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^8.1.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "nodemon": "^2.0.7",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.3",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0"
+  },
+  "scripts": {
+    "start": "nodemon",
+    "build": "webpack --mode production"
+  }
+}

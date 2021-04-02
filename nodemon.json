@@ -1,5 +1,0 @@
-{
-  "watch": ["src", "public"],
-  "exec": "yarn build",
-  "ext": "ts json tsx"
-}

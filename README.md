@@ -30,10 +30,9 @@ chrome 확장앱을 구성하는 다음 요소를 포함합니다.
 
 ### 주의사항
 
-webpack-dev-server를 이용할 경우, 제대로 된 코드가 나오지 않아 nodemon으로 production 파일을 계속만드는 것으로 대체하였습니다.
-이 방식은 점점 프로젝트가 커진다면, 부하가 발생할 가능성이 있습니다.
-만약, 더 나은 해결책을 가진 분이 계시다면, contribute 또는 issue 부탁드립니다.
-
+Google 에서 배포 시에 더 이상 manifest version 2를 지원하지 않습니다. 
+따라서, version3에 대한 내용을 추가합니다.
+또한, 기존 version2 code는 manifest-v2 branch로 옮겼습니다.
 
 ### 참고사이트 
 

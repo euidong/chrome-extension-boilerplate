@@ -4,7 +4,6 @@ const packageInfo = require('./package.json');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebPackPlugin = require('copy-webpack-plugin');
 const CleanWebPackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
-const ChromeExtensionReloader = require('webpack-chrome-extension-reloader');
 
 const fileExtensions = [
   'jpg',
@@ -20,6 +19,7 @@ const fileExtensions = [
 ];
 
 module.exports = {
+  devtool: 'cheap-module-source-map',
   entry: {
     background: './src/background/index.ts',
     content: './src/content/index.ts',
@@ -37,14 +37,16 @@ module.exports = {
     rules: [
       {
         test: /\.(ts|tsx)?$/,
-        loader: 'ts-loader'
+        loader: 'ts-loader',
+        exclude: /node_modules/
       },
       {
         test: new RegExp('.(' + fileExtensions.join('|') + ')$'),
         loader: 'file-loader',
         options: {
           name: 'image/[name].[ext]'
-        }
+        },
+        exclude: /node_modules/
       }
     ]
   },
@@ -67,7 +69,7 @@ module.exports = {
                   128: 'icon/128.png'
                 },
                 background: {
-                  scripts: ['background.js']
+                  service_worker: 'background.js'
                 },
                 content_scripts: [
                   {
@@ -76,11 +78,9 @@ module.exports = {
                   }
                 ],
                 options_page: 'option.html',
-                browser_action: {
+                action: {
                   default_popup: 'popup.html'
                 },
-                content_security_policy:
-                  " script-src 'self' 'unsafe-eval'; object-src 'self'",
                 ...JSON.parse(content.toString())
               })
             )
@@ -100,14 +100,6 @@ module.exports = {
       template: './public/option.html',
       chunks: ['option'],
       filename: 'option.html'
-    }),
-    new ChromeExtensionReloader({
-      reloadPage: true, // Force the reload of the page also
-      entries: {
-        // The entries used for the content/background scripts
-        contentScript: 'content', // Use the entry names, not the file name or the path
-        background: 'background' // *REQUIRED
-      }
     })
   ]
 };
